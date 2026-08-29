@@ -27,3 +27,9 @@ review keeps the catalog honest.
 The site is static. On Vercel: import this repository, framework
 "Other", deploy — `index.html` and `registry.json` are the whole story.
 With the CLI instead: `vercel --prod` from this folder.
+
+The catalog lives at [usewoofer.com](https://usewoofer.com): in the
+Vercel project, Settings → Domains → add `usewoofer.com`, then point
+the domain's DNS at Vercel — an `A` record for the apex
+(`76.76.21.21`) and a `CNAME` for `www` (`cname.vercel-dns.com`).
+Vercel provisions the certificate once the records resolve.
