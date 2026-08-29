@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Woofer Plugins</title>
+<meta name="description" content="Sandboxed plugins for Woofer, the fast native Spotify client.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">Woofer <span>Plugins</span></div>
+    <p>Sandboxed additions for Woofer, the fast native Spotify client. Every
+    plugin here runs inside a WebAssembly sandbox: it can compute, and it can
+    ask Woofer to fetch only from the domains it declares — nothing else.
+    Every listing is reviewed by hand before it appears.</p>
+  </header>
+
+  <h2>Available plugins</h2>
+  <div id="plugins"><p class="desc">Loading the catalog…</p></div>
+
+  <h2>Installing</h2>
+  <div class="how">
+    <ol>
+      <li>Download a plugin's <code>.wasm</code> file below.</li>
+      <li>In Woofer, open the <strong>Plugins</strong> page from the top bar.</li>
+      <li>Drag the file onto the window — or paste its address under
+      <strong>Install from URL</strong>.</li>
+      <li>Toggle it on. Translate and Romanize ship inside Woofer already; a
+      downloaded plugin with the same job replaces your pick on the Plugins
+      page.</li>
+    </ol>
+  </div>
+
+  <footer>
+    The catalog lives at
+    <a href="https://github.com/kreatzzz/woofer-plugins">github.com/kreatzzz/woofer-plugins</a>
+    — propose a plugin with a pull request; nothing is listed without a
+    reviewed merge. Woofer is not affiliated with Spotify.<br>
+    API version 1 · <span id="updated"></span>
+  </footer>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "id": "translate",
+  "name": "Translate",
+  "publisher": "kreatzzz",
+  "version": "1.0.0",
+  "api": 1,
+  "capabilities": ["translation-provider:translate"],
+  "domains": ["clients5.google.com"],
+  "homepage": "https://github.com/kreatzzz/woofer-plugin-translate"
+}
