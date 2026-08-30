@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Woofer Guide</title>
+<meta name="description" content="Getting started with Woofer: sign in, lyrics with translation and romanization, and plugins.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="nav-logo" href="index.html">Woofer</a>
+    <div class="nav-links">
+      <a href="index.html">Download</a>
+      <a href="plugins.html">Plugins</a>
+      <a href="guide.html" aria-current="page">Guide</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Guide</h1>
+    <p>The short version: sign in, play, and add what you miss. The long
+    version lives in the repository under
+    <a href="https://github.com/kreatzzz/woofer/tree/main/docs">docs/</a>.</p>
+  </header>
+
+  <div class="guide">
+    <aside class="guide-nav">
+      <a href="#getting-started">Getting started</a>
+      <a href="#lyrics">Lyrics</a>
+      <a href="#plugins">Plugins</a>
+    </aside>
+
+    <main>
+      <section class="section" id="getting-started">
+        <h2>Getting started</h2>
+
+        <h3>Download and first open</h3>
+        <p>Get an installer from the
+        <a href="https://github.com/kreatzzz/woofer/releases/latest">releases
+        page</a>: one macOS download for Apple Silicon and Intel, an
+        installer or a plain zip for Windows, tarballs or a package manager
+        on Linux. The macOS build is unsigned for now, so macOS blocks the
+        first open: right-click Woofer and choose <strong>Open</strong> —
+        on recent macOS, System Settings → Privacy &amp; Security →
+        <strong>Open Anyway</strong>. Every later launch is an ordinary
+        double-click.</p>
+
+        <h3>Sign in</h3>
+        <p>Press <strong>Sign in with Spotify</strong>. Your browser opens
+        Spotify's own consent page; your password never touches Woofer.
+        The browser is needed once per machine — the refresh token lives
+        in your platform's state directory. Browsing and search work on
+        any account; playing needs <strong>Spotify Premium</strong>, and a
+        Free account is told so at sign-in.</p>
+
+        <h3>Enable playback on this computer</h3>
+        <p>Playing here takes one more browser approval, because Spotify
+        treats streaming as a separate grant from the catalog API. Take it
+        from the device menu (<strong>Play here, set up once</strong>) or
+        from Settings. After that, this computer is a Spotify Connect
+        device named Woofer — visible from your phone like any speaker —
+        and it can also wake receivers on your network that Spotify cannot
+        see yet.</p>
+
+        <h3>Worth knowing</h3>
+        <ul>
+          <li>Closing the window does not stop the music. The tray keeps
+          playing and brings the window back; quit from the tray menu or
+          <code>Ctrl+Q</code>.</li>
+          <li><code>Space</code> plays and pauses, <code>Ctrl+F</code> or
+          <code>/</code> searches, <code>Q</code> opens the queue, and
+          <code>Ctrl+/</code> lists every shortcut there is.</li>
+        </ul>
+      </section>
+
+      <section class="section" id="lyrics">
+        <h2>Lyrics</h2>
+
+        <p>The microphone button in the player bar (or <code>L</code>)
+        opens lyrics beside the page. Synced lines highlight and scroll
+        with the song; click a line to seek there. Scrolling by hand
+        pauses the following, and <strong>Follow</strong> resumes it.
+        Lyrics come from Spotify when local playback is authorized,
+        otherwise from <a href="https://lrclib.net">LRCLIB</a>, an open
+        database that needs no account. Podcasts and untranscribed tracks
+        say so honestly.</p>
+
+        <h3>Translation and romanization</h3>
+        <p>Two toggles, in the panel header and in Settings → Lyrics.
+        <strong>Romanize</strong> rewrites the line in Latin letters:
+        Japanese becomes romaji, Korean becomes romanized hangul.
+        <strong>Translate</strong> echoes the line in your language, small
+        and quiet under the original; the language picker defaults to
+        English.</p>
+        <p>Both jobs are plugin jobs. Translate and Romanize ship inside
+        the app; a plugin from the <a href="plugins.html">catalog</a> can
+        take either one over, and when more than one provider is
+        installed, the Plugins page asks which one you want.</p>
+      </section>
+
+      <section class="section" id="plugins">
+        <h2>Plugins</h2>
+
+        <p>A plugin is one <code>.wasm</code> file that computes. Woofer
+        fetches everything for it and holds it to the domains its manifest
+        declares — no socket, no file, no clock crosses the boundary, and
+        the app is fully functional with zero plugins.</p>
+
+        <h3>Installing</h3>
+        <p>From the <a href="plugins.html">catalog</a>, press
+        <strong>Open in Woofer</strong>: the deep link lands in the running
+        app, which asks for a confirmation before installing. (The link
+        needs Woofer running.) Without the app open, download the
+        <code>.wasm</code> and drag it onto the Plugins page, or paste its
+        address under <strong>Install from URL</strong>.</p>
+
+        <h3>Writing your own</h3>
+        <p>The handbook is
+        <a href="https://github.com/kreatzzz/woofer/blob/main/plugins/README.md">plugins/README.md</a>
+        in the main repository; the design is
+        <a href="https://github.com/kreatzzz/woofer/blob/main/docs/plugins.md">docs/plugins.md</a>.
+        The <code>woofer-plugin-sdk</code> wires the ABI for you and runs
+        your module offline on the same interpreter the host uses. A
+        plugin is two pure functions: <code>plan</code> decides what to
+        fetch, <code>fulfil</code> reads what came back. When it works,
+        propose it to the catalog with a pull request — the
+        <a href="https://github.com/kreatzzz/woofer-plugins/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>
+        in the catalog repository has the whole flow.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <a href="index.html">Download</a> · <a href="plugins.html">Plugins</a> ·
+    <a href="https://github.com/kreatzzz/woofer">github.com/kreatzzz/woofer</a><br>
+    Not affiliated with Spotify. Spotify is a trademark of Spotify AB.
+    MIT licensed.
+  </footer>
+</div>
+</body>
+</html>

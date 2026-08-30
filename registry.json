@@ -7,26 +7,28 @@
       "name": "Translate",
       "publisher": "kreatzzz",
       "version": "1.0.0",
+      "category": "Providers",
       "description": "Echoes every lyric line in your language, small and quiet under the original. Batches a whole song into a few requests and skips songs already in your language.",
       "capabilities": ["translation-provider:translate"],
       "domains": ["clients5.google.com"],
       "homepage": "https://github.com/kreatzzz/woofer-plugin-translate",
       "wasm": "/plugins/translate/plugin.wasm",
       "size": 207599,
-      "sha256": "6b575a71b3fd4022023ebe0ff5064687974873979d1edf070a3b6fcca26ebfbe"
+      "sha256": "d8d878e26e954beba852bc3f290e8543f5fe065aa182faaae6494abdc03f4b48"
     },
     {
       "id": "romanize",
       "name": "Romanize",
       "publisher": "kreatzzz",
       "version": "1.0.0",
+      "category": "Providers",
       "description": "Rewrites lyric lines in Latin letters, for singing along to a song written in a script you cannot read: Japanese becomes romaji, Korean becomes romanized hangul.",
       "capabilities": ["translation-provider:romanize"],
       "domains": ["clients5.google.com"],
       "homepage": "https://github.com/kreatzzz/woofer-plugin-romanize",
       "wasm": "/plugins/romanize/plugin.wasm",
       "size": 197186,
-      "sha256": "84b2dec7a050dd8af0eeacbbe9f6841282b0d3c456cfb036d0ecdfc6f3f34217"
+      "sha256": "16e34740eabf877c589c27a50d47f86136d7319d6fadbd369b1c7a93da5c77db"
     }
   ]
 }

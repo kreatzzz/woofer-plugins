@@ -3,42 +3,112 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Woofer Plugins</title>
-<meta name="description" content="Sandboxed plugins for Woofer, the fast native Spotify client.">
+<title>Woofer — a fast, native Spotify client</title>
+<meta name="description" content="Woofer is a fast, native Spotify client for macOS, Windows, and Linux, extendable with sandboxed plugins.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div class="logo">Woofer <span>Plugins</span></div>
-    <p>Sandboxed additions for Woofer, the fast native Spotify client. Every
-    plugin here runs inside a WebAssembly sandbox: it can compute, and it can
-    ask Woofer to fetch only from the domains it declares — nothing else.
-    Every listing is reviewed by hand before it appears.</p>
-  </header>
+  <nav class="nav">
+    <a class="nav-logo" href="index.html">Woofer</a>
+    <div class="nav-links">
+      <a href="index.html" aria-current="page">Download</a>
+      <a href="plugins.html">Plugins</a>
+      <a href="guide.html">Guide</a>
+    </div>
+  </nav>
 
-  <h2>Available plugins</h2>
-  <div id="plugins"><p class="desc">Loading the catalog…</p></div>
+  <section class="hero">
+    <h1>Woofer</h1>
+    <p class="pitch">A fast, native Spotify client for macOS, Windows, and
+    Linux. It starts in well under a second, stays small while it runs, and
+    there is no browser engine anywhere in the process.</p>
+    <!-- Per-OS asset URLs embed the version
+         (…/releases/latest/download/woofer-vX-macos-universal.dmg and
+         siblings), so they can only be written once a release exists.
+         Every button below points at the releases page; with the first
+         tagged release, swap the OS links for exact asset URLs. -->
+    <div class="cta-row">
+      <a class="button cta" href="https://github.com/kreatzzz/woofer/releases/latest">Download Woofer</a>
+    </div>
+    <p class="os-links">
+      <a href="https://github.com/kreatzzz/woofer/releases/latest">macOS</a> ·
+      <a href="https://github.com/kreatzzz/woofer/releases/latest">Windows</a> ·
+      <a href="https://github.com/kreatzzz/woofer/releases/latest">Linux</a>
+    </p>
+    <p class="fineprint">Free, MIT licensed. Playing music needs Spotify
+    Premium; browsing works on any account.</p>
+  </section>
 
-  <h2>Installing</h2>
-  <div class="how">
-    <ol>
-      <li>Download a plugin's <code>.wasm</code> file below.</li>
-      <li>In Woofer, open the <strong>Plugins</strong> page from the top bar.</li>
-      <li>Drag the file onto the window — or paste its address under
-      <strong>Install from URL</strong>.</li>
-      <li>Toggle it on. Translate and Romanize ship inside Woofer already; a
-      downloaded plugin with the same job replaces your pick on the Plugins
-      page.</li>
-    </ol>
+  <h2>What it does</h2>
+  <div class="grid">
+    <div class="feature">
+      <h3>A Connect device</h3>
+      <p>Press play here, or pick Woofer from your phone. Move playback to
+      any speaker and keep controlling it: play, pause, skip, seek,
+      shuffle, repeat, volume.</p>
+    </div>
+    <div class="feature">
+      <h3>Finds your receivers</h3>
+      <p>A librespot, spotifyd, or hardware receiver is invisible to
+      Spotify until it has an account. Woofer discovers one on your
+      network over mDNS and connects it.</p>
+    </div>
+    <div class="feature">
+      <h3>Your whole library</h3>
+      <p>Playlists, Liked Songs, saved albums, followed artists, podcasts.
+      Playlists you own are editable; the sidebar pins, filters, and takes
+      your order.</p>
+    </div>
+    <div class="feature">
+      <h3>Search everywhere</h3>
+      <p>Songs, artists, albums, playlists, podcasts, and episodes, with a
+      top result and per-type views.</p>
+    </div>
+    <div class="feature">
+      <h3>Synced lyrics</h3>
+      <p>Line-by-line lyrics that follow the song; click a line to seek.
+      Translation and romanization are one toggle away.</p>
+    </div>
+    <div class="feature">
+      <h3>Album-art colour</h3>
+      <p>Pages and the player bar take a tint from the cover you are
+      looking at or listening to. Light and dark, or follow the system.</p>
+    </div>
+    <div class="feature">
+      <h3>Stays in the tray</h3>
+      <p>Closing the window keeps the music playing; the tray brings the
+      window back. MPRIS and your media keys see it like any other
+      player.</p>
+    </div>
+    <div class="feature">
+      <h3>Keyboard-first</h3>
+      <p>Every common action has a shortcut, and <code>Ctrl+/</code> lists
+      them all.</p>
+    </div>
+    <div class="feature">
+      <h3>A plugin sandbox</h3>
+      <p>One .wasm file computes; Woofer fetches, caches, and enforces its
+      declared domains. A plugin decorates the app — it never becomes
+      it.</p>
+    </div>
   </div>
 
+  <h2>Woofer is extendable</h2>
+  <p class="section-lead">Plugins are sandboxed WebAssembly modules: they
+  compute, Woofer fetches for them and holds each one to the domains it
+  declares, and nothing is listed without a reviewed merge. Translate and
+  Romanize ship inside the app already; the catalog adds more.
+  <strong>Open in Woofer</strong> hands the install to the running app.</p>
+  <div id="featured"><p class="desc">Loading the catalog…</p></div>
+  <p><a class="quiet-link" href="plugins.html">browse all →</a></p>
+
   <footer>
-    The catalog lives at
-    <a href="https://github.com/kreatzzz/woofer-plugins">github.com/kreatzzz/woofer-plugins</a>
-    — propose a plugin with a pull request; nothing is listed without a
-    reviewed merge. Woofer is not affiliated with Spotify.<br>
-    API version 1 · <span id="updated"></span>
+    Woofer: <a href="https://github.com/kreatzzz/woofer">github.com/kreatzzz/woofer</a>
+    · Catalog: <a href="https://github.com/kreatzzz/woofer-plugins">github.com/kreatzzz/woofer-plugins</a>
+    · <a href="guide.html">Guide</a><br>
+    Not affiliated with Spotify. Spotify is a trademark of Spotify AB.
+    MIT licensed.
   </footer>
 </div>
 <script src="main.js"></script>
