@@ -31,12 +31,15 @@ and `size` are never edited by hand after the fact.
 | `version` | the plugin's own version |
 | `category` | the chip on the card ("Providers" for the data providers so far) |
 | `description` | the card copy — what it does, honestly |
-| `capabilities` | the host capabilities it answers (e.g. `translation-provider:translate`) |
+| `capabilities` | the host capabilities it answers (for example `provider:translate`) |
 | `domains` | every host the plugin may ask Woofer to fetch from, enforced by the host |
 | `homepage` | where the readable source lives |
-| `wasm` | the served path of the module, e.g. `/plugins/translate/plugin.wasm` |
+| `wasm` | the absolute HTTPS address of the module |
 | `size` | the wasm's size in bytes, shown as KB |
 | `sha256` | the digest of the exact committed wasm; re-verified by the app at install and on every launch |
+
+Run `bash scripts/validate-catalog.sh` before a pull request. CI runs the same
+checks against every entry, manifest, module size, and digest.
 
 ## Publishing a plugin
 

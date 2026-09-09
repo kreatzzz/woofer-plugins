@@ -7,9 +7,9 @@ function catalog_card(plugin) {
   const size = Math.round(plugin.size / 1024) + " KB";
   const digest = plugin.sha256.slice(0, 16) + "…";
   const capabilities = plugin.capabilities
-    .map((capability) => `<span class="chip">${capability.replace("translation-provider:", "")}</span>`)
+    .map((capability) => `<span class="chip">${capability.replace("provider:", "")}</span>`)
     .join("");
-  const domains = `<span class="chip">${plugin.domains.join(", ")}</span>`;
+  const domains = `<span class="chip">${plugin.domains.length ? plugin.domains.join(", ") : "no network"}</span>`;
   const category = plugin.category ? `<span class="chip cat">${plugin.category}</span>` : "";
   return `
     <div class="row">

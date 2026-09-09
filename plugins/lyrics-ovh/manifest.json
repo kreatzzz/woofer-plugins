@@ -1,0 +1,10 @@
+{
+  "id": "lyrics-ovh",
+  "name": "Lyrics.ovh",
+  "publisher": "kreatzzz",
+  "version": "1.0.0",
+  "api": 1,
+  "capabilities": ["provider:lyrics"],
+  "domains": ["api.lyrics.ovh"],
+  "homepage": "https://github.com/kreatzzz/woofer/tree/main/plugins/lyrics-ovh"
+}

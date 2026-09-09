@@ -1,6 +1,6 @@
 {
   "api": 1,
-  "updated": "2026-08-29",
+  "updated": "2026-09-08",
   "plugins": [
     {
       "id": "translate",
@@ -8,13 +8,13 @@
       "publisher": "kreatzzz",
       "version": "1.0.0",
       "category": "Providers",
-      "description": "Echoes every lyric line in your language, small and quiet under the original. Batches a whole song into a few requests and skips songs already in your language.",
-      "capabilities": ["translation-provider:translate"],
+      "description": "Adds a translation beneath each lyric line and skips songs already written in the selected language.",
+      "capabilities": ["provider:translate"],
       "domains": ["clients5.google.com"],
       "homepage": "https://github.com/kreatzzz/woofer/tree/main/plugins/translate",
-      "wasm": "/plugins/translate/plugin.wasm",
-      "size": 207599,
-      "sha256": "845b559b4277b65b3accfafb47ac51f8d127bbbc02dbea74f503de4490e46e59"
+      "wasm": "https://usewoofer.com/plugins/translate/plugin.wasm",
+      "size": 207153,
+      "sha256": "3ca85c0a23debd0bf48bd04a88edaa0a623e1be5db34cf6320c786caa048273e"
     },
     {
       "id": "romanize",
@@ -22,13 +22,42 @@
       "publisher": "kreatzzz",
       "version": "1.0.0",
       "category": "Providers",
-      "description": "Rewrites lyric lines in Latin letters, for singing along to a song written in a script you cannot read: Japanese becomes romaji, Korean becomes romanized hangul.",
-      "capabilities": ["translation-provider:romanize"],
+      "description": "Uses Google's romanization response to write non-Latin lyric lines with Latin characters.",
+      "capabilities": ["provider:romanize"],
       "domains": ["clients5.google.com"],
       "homepage": "https://github.com/kreatzzz/woofer/tree/main/plugins/romanize",
-      "wasm": "/plugins/romanize/plugin.wasm",
-      "size": 197186,
-      "sha256": "1c88f2455c13dd579e5e0285794e2f641d7290c5365d7644b8fecf9bbeaaf415"
+      "wasm": "https://usewoofer.com/plugins/romanize/plugin.wasm",
+      "size": 196740,
+      "sha256": "385c77f7c0d79e036f51283dd800419f0230432cda387c3461f9994cc8679a4c"
+    },
+    {
+      "id": "romanize-offline",
+      "name": "Offline Romanizer",
+      "publisher": "kreatzzz",
+      "version": "1.0.0",
+      "category": "Providers",
+      "description": "Romanizes Unicode text inside the sandbox with no account, API key, or network request.",
+      "capabilities": ["provider:romanize"],
+      "domains": [],
+      "homepage": "https://github.com/kreatzzz/woofer/tree/main/plugins/romanize-offline",
+      "wasm": "https://usewoofer.com/plugins/romanize-offline/plugin.wasm",
+      "size": 762673,
+      "sha256": "0c238fab52f01ea8e54d5e3966593e4c722df1e29086a672c214d38fc45bfa8b",
+      "license": "MIT AND ISC"
+    },
+    {
+      "id": "lyrics-ovh",
+      "name": "Lyrics.ovh",
+      "publisher": "kreatzzz",
+      "version": "1.0.0",
+      "category": "Providers",
+      "description": "Looks up plain lyrics by artist and title after Woofer's built-in Spotify and LRCLIB sources miss.",
+      "capabilities": ["provider:lyrics"],
+      "domains": ["api.lyrics.ovh"],
+      "homepage": "https://github.com/kreatzzz/woofer/tree/main/plugins/lyrics-ovh",
+      "wasm": "https://usewoofer.com/plugins/lyrics-ovh/plugin.wasm",
+      "size": 195094,
+      "sha256": "c4d05a126d05f21c334cb6d4492ccaad19a89b62af2a3378be17e736f8b14c48"
     }
   ]
 }
